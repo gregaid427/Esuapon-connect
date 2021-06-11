@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from suapon.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Jun 2021 04:10:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Connect and interact with other students from across the country" />
+    <meta name="keywords" content="gossip, forum, discussions, students, tertiary" />
+    <meta name="author" content="Pesewa Websoft" />
+    <title>SUAPON | Interact with colleagues from other institutions</title>
+    <link rel="icon" type="image/png" href="images/suapon-icon%20.png"/>
+    <link href="stylesheets/jquery-ttooltip.css" media="screen" rel="stylesheet" />
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.css" media="screen" rel="stylesheet" />
+    <link href="stylesheets/disscusion.css" media="screen" rel="stylesheet" />
+    <link href="stylesheets/home.css" media="screen" rel="stylesheet" />
+    <link rel="stylesheet" media="all" type="text/css" href="fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" media="all" type="text/css" href="fontawesome/css/font-awesome.min.css">
+    <script src="javascripts/jquery-2.1.4.min.js"></script>
+    <script src="javascripts/theme.js"></script>
+    <script src="javascripts/jquery-ttooltip.js"></script>
+    <script src="javascripts/jquery-ttooltip.min.js"></script>
+    <script src="javascripts/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="javascripts/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="javascripts/about.js"></script>
+    <script type="text/javascript" src="validation.min.js"></script>
+    <script type="text/javascript" src="logIn.js"></script>
+    <style>
+        .item img{
+            max-height: 400px;
+        }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111993655-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111993655-1');
+
+
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1609751925996082',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v3.0'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "../connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+</head>
+<body style="background-color: white; background-image: none">
+<nav id="shown-nav" class="navbar  navbar-fixed-top">
+
+        <div style="margin: 15px 0 0 20px" class="navbar-left pull-left">
+            <img src="images/suapon-header.png" height="50">
+        </div>
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="nav">
+
+            <ul style="margin: -10px 20px 0 0" class="nav navbar-nav navbar-right">
+                <li style="margin: 5px 50px 0 0"><a href="login.html"><button href="login.html" class="btn btn-default btn-lg">Login</button></a> </li>
+                <li style="margin: 5px 50px 0 0"><a href="signup.html"><button class="btn btn-default btn-lg">Sign-Up</button></a> </li>
+            </ul>
+        </div>
+
+</nav>
+
+<nav id="hidden-nav" class="navbar  navbar-fixed-top hidden navbar-inverse">
+
+        <div style="margin: 15px 0 0 20px" class="navbar-left pull-left">
+            <img src="images/suapon-header.png" height="20">
+        </div>
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navHidden">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navHidden">
+
+            <ul style="margin: -10px 20px 0 0" class="nav navbar-nav navbar-right">
+                <li  style="margin: 5px 50px 0 0"><a href="login.html"><button class="btn btn-default btn-sm"> Login </button></a></li>
+                <li  style="margin: 5px 50px 0 0"><a href="signup.html"><button class="btn btn-default btn-sm"> Sign-Up </button></a> </li>
+            </ul>
+        </div>
+
+</nav>
+
+<div id="loader" class="center-block hidden" align="center">
+    <h4>
+        <span class="fa fa-spin fa-spinner"></span> loading...
+    </h4>
+</div>
+
+<div id="index-header">
+    <div class="container">
+        <div  class="row" >
+            <div class="col-md-6">
+                <br><br>
+                <div class="signin-form ">
+
+                    <div class=" center-block">
+
+                        <form class="form-signin center-block" method="post" id="register-form">
+
+                            <h2 class="form-signin-heading">Log In</h2>
+                            <hr/>
+
+                            <div id="error">
+                                <!-- error will be shown here ! -->
+                            </div>
+
+                                                            <input type="hidden" name="page" id="page" value="forum.php">
+                                
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i> </span>
+                                    <input type="text" class="form-control" placeholder="Username or email" name="user_name" id="user_name"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-key"></i> </span>
+                                    <input type="password" class="form-control" placeholder="Password" name="password" id="password"/>
+                                </div>
+                            </div>
+
+
+                            <hr/>
+
+                            <a href="resetpass.html">Forgotten Password?</a>
+                            <br>
+                            <br>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-default" name="btn-save" id="btn-submit">
+                                    <span class="glyphicon glyphicon-log-in"></span> &nbsp; Log In
+                                </button>
+                            </div>
+
+                            <br><br>
+                            <span><span class="fa fa-exclamation"></span> Don't have an account? &nbsp; <a
+                                        href="signup.html">Click here</a> to sign up</span>
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                                <div id="indexCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
+
+                    <div class="carousel-inner">
+                                                <div class="item active">
+                            
+
+                                <br>
+                                <br>
+                                <div class="form-signin center-block" id="post45">
+                                    <h5 style="color: darkgreen; font-size: 90%">
+                                                                                    <img src="gallery/SPMjA%3d1072743045995ad656f419.jpg" style="cursor: pointer" align="center" class="img-circle" height="20">
+                                                                                    Passum tornado from UENR wrote..
+                                                                            </h5>
+                                    <hr style="margin-top: 0; padding-top: 0">
+                                    
+                                    Join suapon to enhance your academic skills, to get free documents pertaining any course. Suapon app is available on Google store. Thanks
+                                    <hr>
+
+                                    <div style="color: green" class="forumPs row">
+
+                                        <div class="col-xs-8">
+                                            <span class="glyphicon glyphicon-time"></span> Wed Apr 18,2018 at 9:45                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <!-- click to load all comments -->
+                                            <span style="width:20%;"  title="show all comments">
+                                        <span id="img0" class="i45 glyphicon glyphicon-comment"></span>
+                                        <span id="numOfComments45">0</span>
+                                    </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+
+                            </div>
+                                                        <div class="item">
+                                
+
+                                <br>
+                                <br>
+                                <div class="form-signin center-block" id="post44">
+                                    <h5 style="color: darkgreen; font-size: 90%">
+                                                                                    <img src="gallery/default.html" style="cursor: pointer" align="center" class="img-circle" height="20">
+                                                                                    eminentgh from University of Professional studies Accra wrote..
+                                                                            </h5>
+                                    <hr style="margin-top: 0; padding-top: 0">
+                                    
+                                    am new here......hope gonna enjoy my stay here?
+                                    <hr>
+
+                                    <div style="color: green" class="forumPs row">
+
+                                        <div class="col-xs-8">
+                                            <span class="glyphicon glyphicon-time"></span> Sat Jan 20,2018 at 9:10                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <!-- click to load all comments -->
+                                            <span style="width:20%;"  title="show all comments">
+                                        <span id="img1" class="i44 glyphicon glyphicon-comment"></span>
+                                        <span id="numOfComments44">1</span>
+                                    </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+
+                            </div>
+                                                        <div class="item">
+                                
+
+                                <br>
+                                <br>
+                                <div class="form-signin center-block" id="post43">
+                                    <h5 style="color: darkgreen; font-size: 90%">
+                                                                                    <img src="gallery/SPMTM295234103059d17c53a06f0.jpg" style="cursor: pointer" align="center" class="img-circle" height="20">
+                                                                                    visionary from KNUST wrote..
+                                                                            </h5>
+                                    <hr style="margin-top: 0; padding-top: 0">
+                                    
+                                    Hello guys, please who has pdfs for Natural Resources Management year 2 students
+                                    <hr>
+
+                                    <div style="color: green" class="forumPs row">
+
+                                        <div class="col-xs-8">
+                                            <span class="glyphicon glyphicon-time"></span> Wed Dec 27,2017 at 13:43                                        </div>
+
+                                        <div class="col-xs-4">
+                                            <!-- click to load all comments -->
+                                            <span style="width:20%;"  title="show all comments">
+                                        <span id="img0" class="i43 glyphicon glyphicon-comment"></span>
+                                        <span id="numOfComments43">0</span>
+                                    </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+
+                            </div>
+                                                    </div>
+
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a id="up-arrow" href="#">
+    <img src="images/up-arrow.jpg" height="50" class="img-circle" width="50" title="top" alt="top">
+</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">
+                Connect and interact with colleagues from other tertiary institutions
+            </h2>
+            <p class="text-justify" style="font-size: large">
+                Do you love group studies? What about a group with students from all
+                tertiary institutions across the globe?
+                <br>
+                Do you love to share? Why not share educational materials with students from all
+                tertiary institutions across the globe?
+            </p>
+            <p style="font-size: large" class="text-justify">
+                <b>SUAPON</b> is a platform where students from tertiary institutions
+                can interact with each other; sharing ideas, asking and answering questions.
+                Students can also upload and download books, past questions and other educational materials
+                The main goal is to create an online community where students learn from each other.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="images/connect-header.jpg" width="100%" class="img-responsive" alt="learn from others">
+        </div>
+    </div>
+
+    <hr>
+    <div class="row hidden" id="mobile-screenshots">
+        <img src="images/screenshot-all.png" class="img-responsive center-block" align="center">
+    </div>
+    <div class="row">
+        <div class="center-block">
+            <a href="signup.html" id="join-now">
+                <button class="btn btn-default btn-lg center-block">
+                    JOIN NOW
+                </button>
+            </a>
+        </div>
+    </div>
+    <br><br><br>
+</div>
+
+</body>
+<footer>
+    <div class="container">
+        <div class="row">
+            <img src="images/suapon-header.png" align="center" class="center-block img-responsive" alt="suapon logo">
+        </div>
+
+        <br>
+        <br>
+        <p class="text-center" style="color: #3a3b3e">
+            <a href="forum.php">Forum</a> | <a href="login43f4.html">Library</a> | <a href="terms.html">Terms and Conditions</a>
+        </p>
+        <br>
+
+        <p class="text-center" style="font-size: small; color: #3a3b3e">&copy; Copyright Suapon 2021. Powered by <a href="https://www.pesewawebsoft.com/">Pesewa Websoft</a> </p>
+    </div>
+</footer>
+
+<!-- Mirrored from suapon.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Jun 2021 04:11:00 GMT -->
+</html>

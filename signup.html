@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from suapon.net/signup.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Jun 2021 04:12:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Registration Form || SUAPON</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.css" media="screen" rel="stylesheet" />
+    <link href="stylesheets/jquery-ttooltip.css" media="screen" rel="stylesheet" />
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css" media="screen">
+
+    <link rel="icon" href="images/suapon-icon%20.png">
+    <script type="text/javascript" src="javascripts/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="validation.min.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1609751925996082',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v3.0'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "../connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+</head>
+
+<body style='background: url("images/header.jpg")'>
+
+<div id="clear"></div>
+    
+<div class="signin-form">
+
+
+       <form class="form-signin center-block" method="post" id="register-form">
+           <br>
+           <p class="text-danger"> Already have an account? <a href="login.html">Click here</a> to log in</p>
+
+           <h2 class="form-signin-heading">Sign Up</h2>
+           <hr />
+
+           <div id="error">
+        <!-- error will be shown here ! -->
+          </div>
+
+           <div class="form-group">
+               <div class="input-group">
+                   <span class="input-group-addon"><i class="fa fa-user"></i> </span>
+                   <input type="text" class="form-control" placeholder="Full name" name="full_name" id="full_name" required/>
+               </div>
+           </div>
+
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control" placeholder="Username" name="user_name" id="user_name" required/>
+            </div>
+            <div class="show-username">
+
+            </div>
+        </div>
+
+           <div class="form-group">
+               <div class="input-group">
+                   <span class="input-group-addon"><i class="fa fa-envelope"></i> </span>
+                   <input type="email" class="form-control" placeholder="Email address" name="user_email" id="user_email" required/>
+                   <span id="check-e"></span>
+               </div>
+           </div>
+
+
+           <div class="form-group">
+               <div class="input-group">
+                   <span class="input-group-addon"><i class="fa fa-lock"></i> </span>
+                   <input type="password" class="form-control" placeholder="Password" name="password" id="password" required/>
+               </div>
+           </div>
+
+           <div class="form-group">
+               <div class="input-group">
+                   <span class="input-group-addon"><i class="fa fa-lock"></i> </span>
+                   <input type="password" class="form-control" placeholder="Retype Password" name="cpassword" id="cpassword" required/>
+               </div>
+           </div>
+
+           <div class="form-group">
+               <div class="input-group">
+                   <span class="input-group-addon"><i class="fa fa-graduation-cap"></i> </span>
+                   <input type="text" class="form-control" placeholder="Name of Institution" name="user_course" id="course" required/>
+               </div>
+           </div>
+
+
+          <!-- <div class="form-group">
+               <div class="input-group">
+                   <span class="input-group-addon"><i class="fa fa-graduation-cap"></i> </span>
+                   <select name="user_course" class="form-control" id="course" required>
+                       <option disabled selected>--select institution--</option>
+                       <option value="UG">University of Ghana</option>
+                       <option value="KNUST">Kwame Nkrumah University of Science and Technology</option>
+                       <option value="UCC">University of Cape Coast</option>
+                       <option value="UEW">University of Education</option>
+                       <option value="UPS">University of Professional Studies</option>
+                       <option value="UDS">University for Development Studies</option>
+                       <option value="UMAT">University of Mines and Technology</option>
+                       <option value="UHAS">University of Health and Allied Sciences</option>
+                       <option value="UENR">University of Energy and Natural Resources</option>
+                       <option value="STU">Sunyani Technical University</option>
+                       <option value="ATU">Accra Technical University</option>
+                       <option value="KsTU">Kumasi Technical University</option>
+                       <option value="KTU">Koforidua Technical University</option>
+                       <option value="TTU">Tamale Technical University</option>
+                       <option value="CCTU">Cape Coast Technical University</option>
+                       <option value="WTU">Wa Technical University</option>
+                       <option value="BTU">Bolgatanga Technical University</option>
+                       <option value="TadiTU">Takoradi Technical University</option>
+                       <option value="HTU">Ho Technical University</option>
+                       <option value="GTUC">Ghana Telecom University College</option>
+                       <option value="GIJ">Ghana Institute of Journalism</option>
+                       <option value="GIL">Ghana Institute of Languages</option>
+                       <option value="GIMPA">Ghana Institute of Management and Public Administration</option>
+                       <option value="NAFTI">National Film and Television Institute</option>
+                       <option value="RMU">Regional Maritime University</option>
+                       <option value="Central">Central University College</option>
+                       <option value="VVU">Valley View University</option>
+                       <option value="AU">Ashesi University</option>
+                       <option value="CUCG">Catholic University College Ghana</option>
+                       <option value="CSUC">Christian Service University College</option>
+                       <option value="MUCG">Methodist University College Ghana</option>
+                       <option value="PentVars">Pentecost University College</option>
+                       <option value="PUC">Presbyterian University College</option>
+                       <option value="WIUC">Wisconsin International University College</option>
+                       <option value="ANUC">All Nations University College</option>
+                       <option value="ZUC">Zenith University College</option>
+                       <option value="GISM">Ghana Institute of Surveying and Mapping</option>
+                       <option value="ILGS">Institution of Local Government Studies</option>
+                       <option value="ACI">Akrofi-Christaller Institute of Theology, Mission and Culture</option>
+                       <option value="AIT">Accra Institute of Technology</option>
+                       <option value="AUCC">African University College of Communications</option>
+                       <option value="ANG.U.TECH">Anglican University College of Technology</option>
+                       <option value="FHMS">Family Health Medical School</option>
+                       <option value="GNTCS">Good News Theological Seminary</option>
+                       <option value="ICUG">Islamic University College</option>
+                       <option value="Knutsford">Knutsford University College</option>
+                       <option value="LUG">Lancaster University</option>
+                       <option value="CIBT">Catholic Institute of Business and Technology</option>
+                       <option value="IAT">Institute Of Accountancy Training</option>
+                       <option value="BCCG">Blue Crest College</option>
+                       <option value="KUC">KAAF University College</option>
+                       <option value="Radford">Radford University College</option>
+                       <option value="GCUC">Garden City University College</option>
+                       <option value="Regent">Regent University College of Science and Technology</option>
+                       <option value="SMUG">Sikkim Manipal University</option>
+                       <option value="Webster">Webster University Ghana</option>
+                       <option value="GBUC">Ghana Baptist University College</option>
+                       <option value="UCAES">University College of Agriculture and Environmental Studies</option>
+                       <option value="MCUC">Mountcrest University College</option>
+                       <option value="DLUC">Data Link University College</option>
+                       <option value="Spiritan">Spiritan University College</option>
+
+                   </select>
+               </div>
+           </div> -->
+
+           <p>By clicking create account, you accept our <a href="terms.html">Terms and conditions</a> </p>
+     	<hr />
+        
+        <div class="form-group">
+            <button onclick='FB.AppEvents.logEvent("buttonClicked")' type="submit" class="btn btn-default" name="btn-save" id="btn-submit">
+    		<span class="glyphicon glyphicon-log-in"></span> &nbsp; Create Account
+			</button>
+        </div>
+
+      </form>
+
+    </div>
+
+
+<br><br>
+<div align="center" style="color: #FFFFFF">&copy; Copyright suapon 2021   </div>
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+<!-- Mirrored from suapon.net/signup.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Jun 2021 04:12:23 GMT -->
+</html>
